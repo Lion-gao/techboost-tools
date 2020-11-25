@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo yum update      
+sudo yum update -y     
 
 sudo service mysqld stop
 sudo yum -y erase mysql-config mysql55-server mysql55-libs mysql55
