@@ -15,10 +15,9 @@ echo 'export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' 
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 source ~/.bash_profile
 
-export CONFIGURE_OPTS="--disable-install-doc --disable-install-rdoc --disable-install-capi"
+export CONFIGURE_OPTS="--disable-install-doc --disable-install-rdoc"
 rbenv install -v 2.7.3
 unset CONFIGURE_OPTS
 
 rbenv global 2.7.3
 gem install rails -v 5.2.0
-gem pristine --all
