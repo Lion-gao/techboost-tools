@@ -21,5 +21,4 @@ unset CONFIGURE_OPTS
 
 rbenv global 2.7.3
 gem install rails -v 5.2.0
-
-exec $SHELL -l
+gem pristine --all
