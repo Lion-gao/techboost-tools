@@ -8,8 +8,8 @@ sudo yum -y install mysql57-server mysql57
 sudo service mysqld start
 sudo chkconfig mysqld on
 
-sudo yum -y install php72 php72-mbstring php72-pdo php72-mysqlnd
-sudo alternatives --set php /usr/bin/php-7.2
+sudo yum -y install php73 php73-mbstring php73-pdo php73-mysqlnd
+sudo alternatives --set php /usr/bin/php-7.3
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/bin/composer
 curl -OL https://cli-assets.heroku.com/heroku-linux-x64.tar.gz
