@@ -34,6 +34,7 @@ bundle install
 # commit
 git reset
 git add Gemfile
+git add Gemfile.lock
 git add .ruby-version
 
 if ! `git diff --cached` &> /dev/null; then
