@@ -5,7 +5,7 @@ cd ~
 # uninstall rvm
 if command -v rvm &> /dev/null; then
     rvm seppuku --force
-    exec $SHELL -l
+    source ~/.bash_profile
 fi
 
 
@@ -15,7 +15,7 @@ if ! command -v rbenv &> /dev/null; then
     git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
     echo 'export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bash_profile
     echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-    exec $SHELL -l
+    source ~/.bash_profile
 fi
 
 # install ruby v2.7.3
