@@ -29,3 +29,12 @@ sed -e "s/ruby .*/ruby '2.7.3'/" -i Gemfile
 # install bundler
 gem install bundler -v `tail -n1 Gemfile.lock`
 bundle install
+
+# commit
+git reset
+git add Gemfile
+git add .ruby-version
+
+if ! `git diff --cached` &> /dev/null; then
+    git commit -m "update ruby version: to 2.7.3"
+fi
