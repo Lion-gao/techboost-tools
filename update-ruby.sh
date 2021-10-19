@@ -4,7 +4,7 @@ cd ~
 
 # uninstall rvm
 if command -v rvm &> /dev/null; then
-    rvm seppuku
+    rvm seppuku --force
     exec $SHELL -l
 fi
 
