@@ -9,6 +9,15 @@ sudo chkconfig mysqld on
 sudo yum install -y mysql-devel
 
 cd ~
+
+
+# uninstall rvm
+if command -v rvm &> /dev/null; then
+  rvm seppuku --force
+  source ~/.bash_profile
+fi
+
+
 git clone git://github.com/sstephenson/rbenv.git .rbenv
 git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 echo 'export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bash_profile
