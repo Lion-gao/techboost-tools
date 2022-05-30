@@ -48,3 +48,11 @@ rbenv global 2.7.3
 # install rails
 printf "install: --no-rdoc --no-ri\nupdate:  --no-rdoc --no-ri\n" >> ~/.gemrc
 gem install rails -v 5.2.0
+
+
+# install heroku
+curl -OL https://cli-assets.heroku.com/heroku-linux-x64.tar.gz
+tar zxf heroku-linux-x64.tar.gz && rm -f heroku-linux-x64.tar.gz
+sudo mv heroku /usr/local
+echo 'export PATH=/usr/local/heroku/bin:$PATH' >> $HOME/.bash_profile
+source $HOME/.bash_profile
