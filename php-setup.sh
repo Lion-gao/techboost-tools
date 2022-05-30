@@ -16,6 +16,9 @@ sudo yum install mysql-community-server -y
 sudo systemctl start mysqld.service
 sudo systemctl enable mysqld.service
 
+DB_PASSWORD=$(sudo grep "A temporary password is generated" /var/log/mysqld.log | sed -s 's/.*root@localhost: //')
+mysql -uroot -p${DB_PASSWORD} --connect-expired-password -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'TB@shibuya1';uninstall plugin validate_password;set password for root@localhost=password('');"
+
 
 # install php
 sudo yum remove -y php php-*
