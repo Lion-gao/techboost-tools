@@ -2,14 +2,22 @@
 
 cd ~
 
+sudo yum update -y
+
 
 # uninstall MariaDB, install MySQL 5.7
-sudo service mysqld stop
-sudo yum -y erase mysql-config mysql55-server mysql55-libs mysql55
-sudo yum -y install mysql57-server mysql57
-sudo service mysqld start
-sudo chkconfig mysqld on
-sudo yum install -y mysql-devel
+sudo service mariadb stop
+sudo yum -y erase mariadb-config mariadb-common mariadb-libs mariadb
+sudo yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm -y
+sudo yum-config-manager --disable mysql80-community
+sudo yum-config-manager --enable mysql57-community
+sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
+sudo yum install mysql-community-server -y
+sudo systemctl start mysqld.service
+sudo systemctl enable mysqld.service
+
+DB_PASSWORD=$(sudo grep "A temporary password is generated" /var/log/mysqld.log | sed -s 's/.*root@localhost: //')
+mysql -uroot -p${DB_PASSWORD} --connect-expired-password -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'TB@shibuya1';uninstall plugin validate_password;set password for root@localhost=password('');"
 
 
 # uninstall rvm
