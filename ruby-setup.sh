@@ -12,7 +12,7 @@ sudo yum -y localinstall https://dev.mysql.com/get/mysql80-community-release-el7
 sudo yum-config-manager --disable mysql80-community
 sudo yum-config-manager --enable mysql57-community
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
-sudo yum -y install mysql-community-server
+sudo yum -y install mysql-community-server mysql-community-devel
 sudo systemctl start mysqld.service
 sudo systemctl enable mysqld.service
 
