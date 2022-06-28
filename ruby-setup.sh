@@ -19,6 +19,9 @@ sudo systemctl enable mysqld.service
 DB_PASSWORD=$(sudo grep "A temporary password is generated" /var/log/mysqld.log | sed -s 's/.*root@localhost: //')
 mysql -uroot -p${DB_PASSWORD} --connect-expired-password -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'TB@shibuya1';uninstall plugin validate_password;set password for root@localhost=password('');"
 
+# install PostgreSQL11 (for heroku deploy)
+sudo amazon-linux-extras install -y postgresql11
+sudo yum -y install postgresql-devel
 
 # uninstall rvm
 if command -v rvm &> /dev/null; then
