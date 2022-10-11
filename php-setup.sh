@@ -34,6 +34,11 @@ curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/bin/composer
 
 
+# install node.js
+nvm install v16.17.1
+nvm use v16.17.1
+
+
 # install heroku
 curl -OL https://cli-assets.heroku.com/heroku-linux-x64.tar.gz
 tar zxf heroku-linux-x64.tar.gz && rm -f heroku-linux-x64.tar.gz
