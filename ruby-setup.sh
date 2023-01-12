@@ -8,7 +8,7 @@ sudo yum update -y
 # uninstall MariaDB, install MySQL 5.7
 sudo service mariadb stop
 sudo yum -y erase mariadb-config mariadb-common mariadb-libs mariadb
-sudo yum -y localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
+sudo yum -y localinstall https://repo.mysql.com/mysql80-community-release-el7-1.noarch.rpm
 sudo yum-config-manager --disable mysql80-community
 sudo yum-config-manager --enable mysql57-community
 sudo rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022
